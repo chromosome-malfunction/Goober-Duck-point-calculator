@@ -14,8 +14,8 @@ fn menu(duckmap: &mut HashMap<String, u32>, goobermap: &mut HashMap<String, u32>
         let result = prompt("Duck or Goober point system? (Duck/Goober or quit)").trim().to_string();
 
         match result.to_lowercase().as_str() {
-            "duck" => { duck(duckmap, goobermap, "duck"); },
-            "goober" => { duck(duckmap, goobermap, "goober"); },
+            "duck" => { pointcalculations(duckmap, goobermap, "duck"); },
+            "goober" => { pointcalculations(duckmap, goobermap, "goober"); },
             "quit" => { std::process::exit(0); },
             _ => { println!("Unknown command."); continue; },
         }
@@ -70,7 +70,7 @@ fn normal(prompt: &str, user: String, prompt2: &str) -> u32 {
     let amount: u32 = crate::prompt(&question).trim().parse().expect("Please enter a number.");
     amount
 }
-fn duck(duckmap: &mut HashMap<String, u32>, goobermap: &mut HashMap<String, u32>, dg: &str) {
+fn pointcalculations(duckmap: &mut HashMap<String, u32>, goobermap: &mut HashMap<String, u32>, dg: &str) {
     loop {
         let user: String = user(duckmap, goobermap, dg);
         loop {
