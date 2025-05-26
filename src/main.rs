@@ -1,3 +1,5 @@
+//I am better than you [I am the stigma]
+
 use std::collections::HashMap;
 use std::io;
 
@@ -66,9 +68,13 @@ fn user(duckmap: &mut HashMap<String, u32>, goobermap: &mut HashMap<String, u32>
 }
 
 fn normal(prompt: &str, user: String, prompt2: &str) -> u32 {
-    let question = format!("How many {} did {} {}?", prompt, user, prompt2);
-    let amount: u32 = crate::prompt(&question).trim().parse().expect("Please enter a number.");
-    amount
+    loop {
+        let question = format!("How many {} did {} {}?", prompt, user, prompt2);
+        match crate::prompt(&question).trim().parse() {
+            Ok(amount) => return amount,
+            Err(_) => continue
+        }
+    }
 }
 fn pointcalculations(duckmap: &mut HashMap<String, u32>, goobermap: &mut HashMap<String, u32>, dg: &str) {
     loop {
@@ -322,3 +328,4 @@ fn nuisances(goobermap: &mut HashMap<String, u32>, user: String, amount: u32, dg
         format!("This point value is not available for {}", dg)
     }
 }
+//I am better than you [I am the stigma]
