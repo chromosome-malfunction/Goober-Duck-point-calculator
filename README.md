@@ -9,7 +9,7 @@ If i do learn it, the project will get a rewrite with UI.
 (I am coding this for a challange and to learn along with it.)
 
 
-### Contact
+#### Contact
 
 Contact me (fatally.ill) on discord if you need anything.
 
